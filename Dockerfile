@@ -8,7 +8,7 @@ RUN npm i -g npm@latest
 RUN rm -rf node_modules package-lock.json
 
 RUN \
-  cd /opt/etherpad-lite; \
+  cd /opt/etherpad-lite/app; \
   set -xe; \
   for PLUGIN_NAME in ${ETHERPAD_PLUGINS}; do npm install "${PLUGIN_NAME}" || exit 1; done && \
   chmod -R g=u . && \
