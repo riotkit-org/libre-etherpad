@@ -13,5 +13,3 @@ RUN \
 	chown -R etherpad:0 /opt/etherpad-lite && \
 	chown -R 5001:65533 "/root/.npm"
 USER etherpad
-
-CMD ["node", "--experimental-worker", "node_modules/ep_etherpad-lite/node/server.js"]
