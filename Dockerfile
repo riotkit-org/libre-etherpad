@@ -4,13 +4,11 @@ ARG ETHERPAD_PLUGINS="ep_adminpads2 ep_announce ep_themes_ext ep_inline_voting e
 
 USER root
 RUN mkdir -p /root/.npm/_logs
-WORKDIR /opt/etherpad-lite
-
 RUN npm i -g npm@latest
-
 RUN rm -rf node_modules package-lock.json
 
 RUN \
+  cd /opt/etherpad-lite; \
   set -xe; \
   for PLUGIN_NAME in ${ETHERPAD_PLUGINS}; do npm install "${PLUGIN_NAME}" || exit 1; done && \
   chmod -R g=u . && \
