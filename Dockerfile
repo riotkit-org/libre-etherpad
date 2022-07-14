@@ -1,6 +1,6 @@
 FROM ghcr.io/nicholaswilde/etherpad:version-1.8.18
 
-ARG ETHERPAD_PLUGINS="ep_adminpads2 ep_desktop_notifications ep_announce ep_themes_ext ep_inline_voting ep_prometheus ep_message_all ep_mypads"
+ARG ETHERPAD_PLUGINS="ep_adminpads2 ep_announce ep_themes_ext ep_inline_voting ep_prometheus_exporter ep_mypads"
 
 USER root
 RUN mkdir -p /root/.npm/_logs
