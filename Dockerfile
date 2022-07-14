@@ -8,6 +8,8 @@ WORKDIR /opt/etherpad-lite
 
 RUN npm i -g npm@latest
 
+RUN rm -rf node_modules package-lock.json
+
 RUN \
   set -xe; \
   for PLUGIN_NAME in ${ETHERPAD_PLUGINS}; do npm install "${PLUGIN_NAME}" || exit 1; done && \
