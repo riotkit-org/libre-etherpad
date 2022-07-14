@@ -6,6 +6,8 @@ USER root
 RUN mkdir -p /root/.npm/_logs
 WORKDIR /opt/etherpad-lite
 
+RUN npm i -g npm@latest
+
 RUN \
   set -xe; \
   for PLUGIN_NAME in ${ETHERPAD_PLUGINS}; do npm install "${PLUGIN_NAME}" || exit 1; done && \
