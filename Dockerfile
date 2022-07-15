@@ -13,4 +13,5 @@ RUN \
   chmod -R g=u . && \
 	chown -R etherpad:0 /opt/etherpad-lite && \
 	chown -R 5001:65533 "/root/.npm"
+RUN ln -s /opt/etherpad-lite/src /opt/etherpad-lite/node_modules/ep_etherpad-lite
 USER etherpad
