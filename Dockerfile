@@ -6,12 +6,11 @@ USER root
 RUN mkdir -p /root/.npm/_logs
 RUN npm i -g npm@latest
 
-WORKDIR /opt/etherpad-lite/src
+WORKDIR /opt/etherpad-lite
 RUN \
   set -xe; \
-  for PLUGIN_NAME in ${ETHERPAD_PLUGINS}; do npm install "${PLUGIN_NAME}" || exit 1; done && \
+  for PLUGIN_NAME in ${ETHERPAD_PLUGINS}; do npm install "${PLUGIN_NAME}" --no-save --legacy-peer-deps || exit 1; done && \
   chmod -R g=u . && \
 	chown -R etherpad:0 /opt/etherpad-lite && \
 	chown -R 5001:65533 "/root/.npm"
 USER etherpad
-WORKDIR /opt/etherpad-lite
