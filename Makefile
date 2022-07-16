@@ -8,7 +8,7 @@ clone:
 
 build-docker:
 	cd etherpad-lite \
-	&& docker build . --build-arg ETHERPAD_PLUGINS="ep_adminpads2 ep_announce ep_themes_ext ep_inline_voting ep_prometheus ep_mypads ep_etherpad-lite ep_message_all ep_desktop_notifications" -t ghcr.io/riotkit-org/libre-etherpad:${VERSION}
+	&& docker build . --build-arg ETHERPAD_PLUGINS="ep_adminpads2 ep_announce ep_themes_ext ep_inline_voting ep_prometheus ep_mypads ep_message_all ep_desktop_notifications" -t ghcr.io/riotkit-org/libre-etherpad:${VERSION}
 
 push:
 	docker push ghcr.io/riotkit-org/libre-etherpad:${VERSION}
