@@ -12,3 +12,8 @@ Etherpad image with bundled plugins.
 - ep_prometheus
 - ep_message_all
 - ep_mypads
+
+Authors
+-------
+
+Based on fantastic work of [Nicholas Wilde](https://github.com/nicholaswilde/docker-etherpad)
