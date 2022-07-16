@@ -16,4 +16,4 @@ Etherpad image with bundled plugins.
 Authors
 -------
 
-Based on fantastic work of [Nicholas Wilde](https://github.com/nicholaswilde/docker-etherpad)
+Based on fantastic work of [Etherpad authors and contributors](https://github.com/ether/etherpad-lite)
