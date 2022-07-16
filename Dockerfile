@@ -31,7 +31,7 @@ RUN \
 
 FROM base
 ARG BUILD_DATE
-ARG ETHERPAD_PLUGINS="ep_adminpads2"
+ARG ETHERPAD_PLUGINS=""
 LABEL maintainer="riotkit-org"
 ENV NODE_ENV=production
 RUN \
