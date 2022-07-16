@@ -19,16 +19,8 @@ jobs:
                   username: ${{ github.actor }}
                   password: ${{ secrets.GITHUB_TOKEN }}
 
-            - name: Create docker tags
-              id: meta
-              uses: docker/metadata-action@v4
-              with:
-                  images: ghcr.io/riotkit-org/libre-etherpad
+            - name: Build image
+              run: "make build"
 
-            - name: Build and release docker
-              uses: docker/build-push-action@v3
-              with:
-                  context: .
-                  push: ${{ github.event_name != 'pull_request' }}
-                  tags: ${{ steps.meta.outputs.tags }}
-                  labels: ${{ steps.meta.outputs.labels }}
+            - name: Release image
+              run: "make push"
